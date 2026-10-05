@@ -135,7 +135,7 @@
 
    <!-- FIXED TOP NAVIGATION BAR -->
 <header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
-    <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white relative">
+    <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white">
         <!-- Left Nav Links -->
         <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">BRANDING</a>
@@ -144,7 +144,7 @@
         </div>
 
         <!-- Center Brand Infinity Emblem -->
-        <a href="#home" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group">
+        <a href="#home" class="flex items-center gap-2 group">
             <div class="w-8 h-8 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shadow-md">
                 <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
             </div>
@@ -152,45 +152,29 @@
         </a>
 
         <!-- Right Nav Links -->
-        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase ml-auto">
+        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">GRAPHIC DESIGN</a>
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">AI VISUALS</a>
             <a href="#contact" class="hover:text-mono-black font-semibold transition-colors">CONTACT</a>
         </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden text-mono-black focus:outline-none p-1">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
     </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-3 glass-mono-light rounded-2xl p-6 flex-col space-y-4 text-center font-tech uppercase text-xs tracking-widest shadow-2xl">
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">BRANDING</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">CAMPAIGNS</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">DIGITAL</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">GRAPHIC DESIGN</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">AI VISUALS</a>
+        <a href="#contact" class="py-2 hover:text-mono-greyMid transition-colors">CONTACT</a>
+    </div>
 </header>
 
-<!-- Center Brand Infinity Emblem -->
-<a href="#home" class="flex items-center gap-2 group">
-    <div class="w-8 h-8 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shadow-md">
-        <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
-    </div>
-    <span class="font-display font-extrabold tracking-tighter text-sm md:hidden block uppercase text-mono-black">VA</span>
-</a>
-
-<!-- Right Nav Links -->
-<div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
-   <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">GRAPHIC DESIGN</a>
-<a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">AI VISUALS</a>
-<a href="#contact" class="hover:text-mono-black font-semibold transition-colors">CONTACT</a>>
-</div>
-
-<!-- Mobile Menu Toggle Button -->
-<button id="mobileMenuBtn" class="md:hidden text-mono-black focus:outline-none p-1">
-    <i data-lucide="menu" class="w-5 h-5"></i>
-</button>
-</nav>
-
-<!-- Mobile Drawer Menu -->
-<div id="mobileMenu" class="hidden md:hidden mt-3 glass-mono-light rounded-2xl p-6 flex-col space-y-4 text-center font-tech uppercase text-xs tracking-widest shadow-2xl">
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">BRANDING</a>
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">CAMPAIGNS</a>
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">DIGITAL</a>
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">EDITORIAL</a>
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">PRESENTATIONS</a>
-    <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">ART DIRECTION</a>
-</div>
-```
 
         </div>
     </header>
