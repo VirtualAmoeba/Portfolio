@@ -135,7 +135,7 @@
 
    <!-- FIXED TOP NAVIGATION BAR -->
 <header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
-    <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white">
+    <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white relative">
         <!-- Left Nav Links -->
         <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">BRANDING</a>
@@ -144,7 +144,7 @@
         </div>
 
         <!-- Center Brand Infinity Emblem -->
-        <a href="#home" class="flex items-center gap-2 group">
+        <a href="#home" class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group">
             <div class="w-8 h-8 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shadow-md">
                 <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
             </div>
@@ -152,7 +152,7 @@
         </a>
 
         <!-- Right Nav Links -->
-        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
+        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase ml-auto">
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">GRAPHIC DESIGN</a>
             <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">AI VISUALS</a>
             <a href="#contact" class="hover:text-mono-black font-semibold transition-colors">CONTACT</a>
