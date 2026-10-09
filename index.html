@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRTUALAMOEBA — Digital Artist & Creative Director</title>
+    <title>VIRTUALAMOEBA — Digital Art & Design</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Syne, Space Grotesk, Plus Jakarta Sans -->
+    <!-- Google Fonts: Boldonse, Syne, Space Grotesk, Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         mono: {
-                            white: '#FFFFFF',
-                            bg: '#F8F9FA',
-                            greyLight: '#F4F4F6',
-                            greyBorder: '#E5E7EB',
-                            greyMid: '#888888',
-                            greyDark: '#333333',
-                            charcoal: '#1A1A1A',
-                            black: '#000000'
+                            white: '#FFFFFF', bg: '#F8F9FA', greyLight: '#F4F4F6',
+                            greyBorder: '#E5E7EB', greyMid: '#888888', greyDark: '#333333',
+                            charcoal: '#1A1A1A', black: '#000000'
                         }
                     },
                     fontFamily: {
@@ -38,784 +32,299 @@
             }
         }
     </script>
-
     <style>
-        /* Custom Custom Scrollbar - Strictly Monochromatic */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F4F4F6;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #000000;
-            border-radius: 999px;
-        }
-
-        /* Glassmorphic frosted elements matching Vela Armon blueprint */
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #F4F4F6; }
+        ::-webkit-scrollbar-thumb { background: #000000; border-radius: 999px; }
         .glass-mono-light {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+            background: rgba(255,255,255,.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,.9); box-shadow: 0 20px 40px -15px rgba(0,0,0,.05);
         }
-
         .glass-mono-dark {
-            background: rgba(10, 10, 10, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            background: rgba(10,10,10,.65); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,.15); box-shadow: 0 25px 50px -12px rgba(0,0,0,.35);
         }
-
-        /* Exact notched bottom hero curve cutout from Vela Armon screenshot */
         .hero-notch-mask {
-            clip-path: polygon(
-                0 0, 
-                100% 0, 
-                100% calc(100% - 38px), 
-                calc(50% + 140px) calc(100% - 38px),
-                calc(50% + 110px) 100%, 
-                calc(50% - 110px) 100%, 
-                calc(50% - 140px) calc(100% - 38px),
-                0 calc(100% - 38px)
-            );
+            clip-path: polygon(0 0,100% 0,100% calc(100% - 38px),calc(50% + 140px) calc(100% - 38px),calc(50% + 110px) 100%,calc(50% - 110px) 100%,calc(50% - 140px) calc(100% - 38px),0 calc(100% - 38px));
         }
-
-        @media (max-width: 768px) {
-            .hero-notch-mask {
-                clip-path: none;
-                border-radius: 1.75rem;
-            }
-        }
-
-        /* Lowercase display typography matching "vela armon" title */
+        @media (max-width:768px) { .hero-notch-mask { clip-path:none; border-radius:1.75rem; } }
         .display-lowercase {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.05em;
-            text-transform: lowercase;
-            line-height: 0.82;
+            font-family:'Boldonse',sans-serif; font-weight:700; letter-spacing:-.05em;
+            text-transform:uppercase; line-height:.82;
         }
-
-        /* Oversized centered VirtualAmoeba hero wordmark */
+        /* Centered animated hero wordmark */
         .hero-wordmark {
-            display: block;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            white-space: nowrap;
-            font-family: 'Boldonse', sans-serif;
-            font-size: clamp(2.1rem, 9.4vw, 9.8rem);
-            font-weight: 400;
-            letter-spacing: -0.045em;
-            line-height: 1.05;
-            color: #B8B8B8;
-            opacity: 0;
-            transform: translateY(-70px);
-            clip-path: inset(0 0 100% 0);
-            animation: wordmarkReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+            display:block; width:100%; max-width:none; margin:0 auto; text-align:center;
+            font-family:'Boldonse',sans-serif; font-size:clamp(1.6rem,9.5vw,9rem); font-weight:400;
+            text-transform:uppercase; white-space:nowrap; letter-spacing:-.035em; line-height:1.2;
+            color:#333333; opacity:0; transform:translateY(-70px); clip-path:inset(0 0 100% 0);
+            animation:wordmarkReveal 1.6s cubic-bezier(.16,1,.3,1) .3s forwards;
         }
-
-        @keyframes wordmarkReveal {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                clip-path: inset(0);
-            }
-        }
-
-        @media (max-width: 420px) {
-            .hero-wordmark {
-                font-size: clamp(1.75rem, 8.9vw, 2.35rem);
-                letter-spacing: -0.055em;
-            }
-        }
-
-        /* Fanned overlapping image cards animation matching section 3 */
-        .fan-card {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-        }
-        .fan-card-1 { transform: rotate(-12deg) translateY(10px) translateX(-30px); }
-        .fan-card-2 { transform: rotate(0deg) translateY(-20px); z-index: 20; }
-        .fan-card-3 { transform: rotate(12deg) translateY(15px) translateX(30px); }
-
-        .fan-container:hover .fan-card-1 { transform: rotate(-18deg) translateY(-10px) translateX(-50px); }
-        .fan-container:hover .fan-card-2 { transform: rotate(0deg) translateY(-35px) scale(1.05); }
-        .fan-container:hover .fan-card-3 { transform: rotate(18deg) translateY(5px) translateX(50px); }
-
-        /* Capsule badge styling for inline manifesto text */
+        @keyframes wordmarkReveal { to { opacity:1; transform:translateY(0); clip-path:inset(0); } }
+        @media (max-width:420px) { .hero-wordmark { font-size:clamp(1.35rem,8.8vw,2.2rem); letter-spacing:-.055em; } }
+        .fan-card { transition:all .6s cubic-bezier(.16,1,.3,1); box-shadow:0 25px 50px -12px rgba(0,0,0,.4); }
+        .fan-card-1 { transform:rotate(-12deg) translateY(10px) translateX(-30px); }
+        .fan-card-2 { transform:rotate(0deg) translateY(-20px); z-index:20; }
+        .fan-card-3 { transform:rotate(12deg) translateY(15px) translateX(30px); }
+        .fan-container:hover .fan-card-1 { transform:rotate(-18deg) translateY(-10px) translateX(-50px); }
+        .fan-container:hover .fan-card-2 { transform:rotate(0deg) translateY(-35px) scale(1.05); }
+        .fan-container:hover .fan-card-3 { transform:rotate(18deg) translateY(5px) translateX(50px); }
         .inline-badge {
-            display: inline-block;
-            height: 1.2em;
-            width: 3.2em;
-            border-radius: 999px;
-            object-fit: cover;
-            vertical-align: middle;
-            margin: 0 0.35em;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            filter: grayscale(100%) contrast(110%);
+            display:inline-block; height:1.2em; width:3.2em; border-radius:999px; object-fit:cover; vertical-align:middle;
+            margin:0 .35em; border:1px solid rgba(0,0,0,.2); filter:grayscale(100%) contrast(110%);
         }
-
-        /* Pure monochrome grayscale filter for high contrast */
-        .mono-filter {
-            filter: grayscale(100%) contrast(120%) brightness(95%);
-        }
+        .mono-filter { filter:grayscale(100%) contrast(120%) brightness(95%); }
     </style>
 </head>
 <body class="bg-mono-bg text-mono-black font-body antialiased selection:bg-mono-black selection:text-white overflow-x-hidden">
 
-    <!-- FIXED TOP NAVIGATION BAR -->
-    <header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
-        <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white">
-            <!-- Left Nav Links -->
-            <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
-                <a href="#home" class="hover:text-mono-black font-semibold transition-colors">HOME</a>
-                <a href="#about" class="hover:text-mono-black font-semibold transition-colors">ABOUT</a>
-                <a href="#why" class="hover:text-mono-black font-semibold transition-colors">PHILOSOPHY</a>
-            </div>
-
-            <!-- Center Brand Infinity Emblem -->
-            <a href="#home" class="flex items-center gap-2 group">
-                <div class="w-8 h-8 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shadow-md">
-                    <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
-                </div>
-                <span class="font-display font-extrabold tracking-tighter text-sm md:hidden block uppercase text-mono-black">VA</span>
-            </a>
-
-            <!-- Right Nav Links -->
-            <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
-                <a href="#statement" class="hover:text-mono-black font-semibold transition-colors">MANIFESTO</a>
-                <a href="#services" class="hover:text-mono-black font-semibold transition-colors">SERVICES</a>
-                <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">PORTFOLIO</a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-mono-black focus:outline-none p-1">
-                <i data-lucide="menu" class="w-5 h-5"></i>
-            </button>
-        </nav>
-
-        <!-- Mobile Drawer Menu -->
-        <div id="mobileMenu" class="hidden md:hidden mt-3 glass-mono-light rounded-2xl p-6 flex-col space-y-4 text-center font-tech uppercase text-xs tracking-widest shadow-2xl">
-            <a href="#home" class="py-2 hover:text-mono-greyMid transition-colors">HOME</a>
-            <a href="#about" class="py-2 hover:text-mono-greyMid transition-colors">ABOUT</a>
-            <a href="#why" class="py-2 hover:text-mono-greyMid transition-colors">PHILOSOPHY</a>
-            <a href="#statement" class="py-2 hover:text-mono-greyMid transition-colors">MANIFESTO</a>
-            <a href="#services" class="py-2 hover:text-mono-greyMid transition-colors">SERVICES</a>
-            <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">PORTFOLIO</a>
-            <a href="#contact" class="py-2 hover:text-mono-greyMid transition-colors">CONTACT</a>
+<!-- FIXED TOP NAVIGATION BAR -->
+<header class="fixed top-6 left-0 right-0 z-50 px-4 md:px-8 max-w-7xl mx-auto">
+    <nav class="glass-mono-light rounded-full px-6 py-3.5 flex items-center justify-between shadow-sm transition-all duration-300 hover:bg-white">
+        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
+            <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">BRANDING</a>
+            <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">CAMPAIGNS</a>
+            <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">DIGITAL</a>
         </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="pt-28 md:pt-32 pb-16 px-3 md:px-6 max-w-[1550px] mx-auto">
-        <div class="relative w-full rounded-[2rem] md:rounded-[2.5rem] bg-mono-black text-white overflow-hidden shadow-2xl hero-notch-mask min-h-[82vh] flex flex-col justify-between p-6 md:p-12">
-
-            <!-- Hero Architecture Backdrop Image (Strictly Grayscale) -->
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop"
-                     alt="Architectural Visual Blueprint"
-                     class="w-full h-full object-cover object-center opacity-60 mono-filter transition-transform duration-1000 ease-out hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/60"></div>
+        <!-- Center Brand Palette Icon -->
+        <a href="#home" class="flex items-center gap-2 group">
+            <div class="w-8 h-8 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:scale-105 duration-300 shadow-md">
+                <i data-lucide="palette" class="w-4 h-4 text-white"></i>
             </div>
+            <span class="font-display font-extrabold tracking-tighter text-sm md:hidden block uppercase text-mono-black">VA</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-xs font-tech tracking-widest text-mono-black/80 uppercase">
+            <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">GRAPHIC DESIGN</a>
+            <a href="#portfolio" class="hover:text-mono-black font-semibold transition-colors">AI VISUALS</a>
+            <a href="#contact" class="hover:text-mono-black font-semibold transition-colors">CONTACT</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden text-mono-black focus:outline-none p-1"><i data-lucide="menu" class="w-5 h-5"></i></button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden mt-3 glass-mono-light rounded-2xl p-6 flex-col space-y-4 text-center font-tech uppercase text-xs tracking-widest shadow-2xl">
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">BRANDING</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">CAMPAIGNS</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">DIGITAL</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">GRAPHIC DESIGN</a>
+        <a href="#portfolio" class="py-2 hover:text-mono-greyMid transition-colors">AI VISUALS</a>
+        <a href="#contact" class="py-2 hover:text-mono-greyMid transition-colors">CONTACT</a>
+    </div>
+</header>
 
-            <!-- Top Hero Metadata -->
-            <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start pt-4 gap-6">
-                <p class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid font-medium">
-                    digital artist /// creative director
-                </p>
-                <div class="text-left sm:text-right max-w-xs text-[11px] font-tech tracking-widest text-white/70 space-y-1">
-                    <p class="text-mono-greyMid uppercase">GRAPHIC DESIGN / ART DIRECTION</p>
+<!-- HERO SECTION -->
+<section id="home" class="pt-28 md:pt-32 pb-16 px-3 md:px-6 max-w-[1550px] mx-auto">
+    <div class="relative w-full rounded-[2rem] md:rounded-[2.5rem] bg-mono-black text-white overflow-hidden shadow-2xl hero-notch-mask min-h-[82vh] flex flex-col justify-between p-6 md:p-12">
+        <!-- Original Hero Banner Image -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center bg-white">
+            <img src="VirtualAmoeba Hero Image.png" alt="Visual Blueprint" class="w-full h-full object-contain object-center">
+            <div class="absolute inset-0 bg-white/75"></div>
+        </div>
+        <!-- Top Hero Bar Overlay -->
+        <div class="relative z-10 pt-4">
+            <div class="flex justify-between items-start gap-6">
+                <p class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid font-medium">digital artist /// creative director</p>
+                <div class="text-right hidden sm:block max-w-xs text-[11px] font-tech tracking-widest text-mono-black space-y-1">
+                    <p class="uppercase">GRAPHIC DESIGN / ART DIRECTION</p>
                     <p class="uppercase">DIGITAL ART / VISUAL SYSTEMS</p>
                     <p class="uppercase">AI-ENHANCED IMAGERY / FILM</p>
                 </div>
             </div>
-
-            <!-- Centered Animated Wordmark -->
-            <div class="relative z-10 w-full flex-1 flex items-center justify-center py-12 md:py-16">
+            <div class="w-full mt-10 md:mt-14 mb-12 md:mb-16">
                 <h1 class="hero-wordmark">VIRTUAL AMOEBA</h1>
             </div>
-
-            <!-- Bottom Hero Content Grid -->
-            <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-end pb-12 md:pb-8">
-                <!-- Subtitle Badge left -->
-                <div class="md:col-span-4">
-                    <p class="text-xs md:text-sm font-tech tracking-widest uppercase text-white/80 leading-relaxed max-w-xs border-l-2 border-white/30 pl-4">
-                        A visual practice built around image, form, and ideas.
-                    </p>
-                </div>
-
-                <!-- Empty center column for the notched button position -->
-                <div class="hidden md:block md:col-span-4"></div>
-
-                <!-- Hero Practice Stats -->
-                <div class="md:col-span-4 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 justify-end items-end">
-                    <div class="glass-mono-dark rounded-2xl p-4 md:p-5 text-center min-w-[140px] w-full sm:w-auto border border-white/20">
-                        <span class="block text-3xl font-display font-bold text-white tracking-tight">26+</span>
-                        <span class="text-[10px] font-tech uppercase tracking-widest text-mono-greyMid">Years of Practice</span>
-                    </div>
-                    <div class="glass-mono-dark rounded-2xl p-4 md:p-5 text-center min-w-[140px] w-full sm:w-auto border border-white/20">
-                        <span class="block text-3xl font-display font-bold text-white tracking-tight">ART|DESIGN</span>
-                        <span class="text-[10px] font-tech uppercase tracking-widest text-mono-greyMid">Multidisciplinary</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CENTER NOTCH FLOATING CTA BUTTON -->
-            <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 z-20 hidden md:block">
-                <a href="#contact" class="group flex items-center gap-3 bg-white text-mono-black px-7 py-3.5 rounded-full font-tech text-xs tracking-wider font-bold shadow-2xl transition-all duration-300 hover:bg-mono-black hover:text-white border border-stone-300">
-                    <span>Let's Connect</span>
-                    <div class="w-6 h-6 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:bg-white group-hover:text-mono-black">
-                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                    </div>
-                </a>
-            </div>
         </div>
-    </section>
-
-    <!-- SECTION 1: ABOUT US -->
-    <section id="about" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
-        
-        <!-- Enormous lowercase section heading with star/asterisk icon -->
-        <div class="flex items-start justify-between border-b border-mono-black/10 pb-8 mb-16">
-            <div>
-                <h2 class="display-lowercase text-7xl sm:text-8xl md:text-9xl text-mono-black">
-                    about us
-                </h2>
-                <div class="flex gap-8 text-[11px] font-tech tracking-widest text-mono-greyMid uppercase mt-2 pl-2 font-medium">
-                    <span>development</span>
-                    <span>art direction</span>
-                    <span>branding</span>
-                </div>
-            </div>
-            <div class="text-mono-black pt-4">
-                <i data-lucide="orbit" class="w-8 h-8 md:w-12 md:h-12 text-mono-black"></i>
-            </div>
-        </div>
-
-        <!-- Manifesto Editorial Text Block with Mixed Inline Image Capsules -->
-        <div class="max-w-5xl ml-auto mb-16">
-            <h3 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl leading-snug tracking-tight text-mono-black uppercase">
-                <span class="text-mono-greyMid text-xl md:text-2xl font-semibold tracking-wider font-tech block mb-2">WE DEVELOP</span> 
-                CONTEMPORARY VISUAL SYSTEMS WHERE GRAPHIC DESIGN,
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=300&auto=format&fit=crop" alt="Structural render" class="inline-badge">
-                BRANDING AND
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300&auto=format&fit=crop" alt="Abstract sculpture" class="inline-badge">
-                ART DIRECTION EXIST IN PERFECT BALANCE. OUR FOCUS IS NOT JUST TO BUILD GRAPHICS — BUT TO CREATE DIGITAL ARTIFACTS THAT ELEVATE BRANDS 
-                <span class="text-mono-greyMid font-light pl-2">///</span>
-            </h3>
-        </div>
-
-        <!-- Two Rounded Preview Images & Subtext Columns -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
-            <!-- Left rounded rectangle preview cards -->
-            <div class="md:col-span-6 flex gap-4">
-                <div class="w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-black/10 group bg-mono-greyLight">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
-                         alt="Monochrome Studio Art 1" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                </div>
-                <div class="w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-black/10 group bg-mono-greyLight">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" 
-                         alt="Monochrome Studio Art 2" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                </div>
-            </div>
-
-            <!-- Right studio bio columns -->
-            <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-tech leading-relaxed text-mono-greyDark">
-                <p class="border-l-2 border-mono-black/20 pl-4">
-                    By integrating innovative methodologies and sustainable design systems, we maximize long-term visual authority for visionary clients.
-                </p>
-                <p class="border-l-2 border-mono-black/20 pl-4">
-                    By uniting vision, precision and craftsmanship, we deliver exceptional artifacts that reflect confidence, quality, and enduring distinction.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: WHY VIRTUAL AMOEBA -->
-    <section id="why" class="py-12 px-3 md:px-6 max-w-[1550px] mx-auto">
-        <div class="relative rounded-[2rem] md:rounded-[2.5rem] bg-mono-greyLight overflow-hidden text-mono-black min-h-[85vh] p-6 md:p-16 flex flex-col justify-between border border-black/10 shadow-sm">
-            
-            <!-- Architectural Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop" 
-                     alt="Architectural Backdrop" 
-                     class="w-full h-full object-cover object-center opacity-25 mono-filter">
-                <div class="absolute inset-0 bg-gradient-to-r from-mono-greyLight/95 via-mono-greyLight/60 to-mono-greyLight/95"></div>
-            </div>
-
-            <!-- Section Title Stack left -->
-            <div class="relative z-10 max-w-2xl flex justify-between items-start">
-                <div>
-                    <span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-2 font-medium">architectural methodology</span>
-                    <h2 class="display-lowercase text-6xl sm:text-7xl md:text-9xl text-mono-black">
-                        why <span class="text-mono-greyMid block pl-10 md:pl-20">virtual</span>
-                        <span class="block pl-20 md:pl-36">amoeba</span>
-                    </h2>
-                </div>
-                <div class="text-mono-black font-tech text-base tracking-widest hidden sm:block font-bold">///</div>
-            </div>
-
-            <!-- Overlapping Frosted Glass Cards Array -->
-            <div class="relative z-10 my-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                
-                <!-- Card 1 -->
-                <div class="glass-mono-light rounded-2xl p-6 border border-white/80 shadow-md transform transition-all duration-300 hover:-translate-y-2">
-                    <span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">01 /// PRACTICE</span>
-                    <p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed">
-                        Architectural design experience shaped by years of refined multidisciplinary practice.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-mono-light rounded-2xl p-6 border border-white/80 shadow-md transform transition-all duration-300 hover:-translate-y-2 lg:translate-y-8">
-                    <span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">02 /// PRECISION</span>
-                    <p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed">
-                        Consistently executed visual artifacts with clarity, purpose and absolute precision.
-                    </p>
-                </div>
-
-                <!-- Card 3 (White Solid Card) -->
-                <div class="bg-white rounded-2xl p-6 border border-black/10 shadow-lg text-mono-black transform transition-all duration-300 hover:-translate-y-2">
-                    <span class="text-xs font-tech text-mono-black font-bold uppercase tracking-widest block mb-4">03 /// BESPOKE</span>
-                    <p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed font-semibold">
-                        Every system shaped around your brand vision, operational scale, and structural lifestyle.
-                    </p>
-                </div>
-
-                <!-- Card 4 (Dark Glass Accent Card) -->
-                <div class="glass-mono-dark rounded-2xl p-6 border border-white/20 shadow-xl text-white transform transition-all duration-300 hover:-translate-y-2 lg:translate-y-12">
-                    <span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">04 /// SEAMLESS</span>
-                    <p class="text-xs md:text-sm font-tech text-white/90 leading-relaxed">
-                        From initial concept to full completion — seamless, transparent, and refined.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Bottom Section Subtext -->
-            <div class="relative z-10 flex justify-between items-end border-t border-mono-black/10 pt-6 text-[10px] font-tech text-mono-greyDark tracking-widest uppercase font-semibold">
-                <span>SELECTED TEXTURES AND FINISHES THAT ENDURE BEYOND TRENDS AND SEASONS</span>
-                <i data-lucide="layers" class="w-4 h-4 text-mono-black"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: STATEMENT & THREE FAN CARDS -->
-    <section id="statement" class="py-24 md:py-36 px-6 max-w-6xl mx-auto text-center relative">
-        
-        <!-- Center Statement Headline -->
-        <div class="max-w-4xl mx-auto mb-16">
-            <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight leading-tight text-mono-black">
-                WE DESIGN VISUAL SYSTEMS <span class="text-mono-greyMid font-normal">THAT BALANCE</span> 
-                SCULPTURAL FORM WITH FUNCTIONAL <span class="text-mono-black font-extrabold">CLARITY,</span>
-            </h2>
-        </div>
-
-        <!-- OVERLAPPING FANNED CARDS DISPLAY (3 ROTATED TILT CARDS) -->
-        <div class="fan-container relative w-full max-w-2xl mx-auto h-[380px] sm:h-[460px] my-8 flex items-center justify-center">
-            
-            <!-- Tilted Card 1 (Left: -12deg) -->
-            <div class="fan-card fan-card-1 absolute w-52 sm:w-64 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" 
-                     alt="Sculptural Branding 1" 
-                     class="w-full h-full object-cover mono-filter">
-            </div>
-
-            <!-- Tilted Card 2 (Center: 0deg) -->
-            <div class="fan-card fan-card-2 absolute w-56 sm:w-72 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" 
-                     alt="Sculptural Branding 2" 
-                     class="w-full h-full object-cover mono-filter">
-            </div>
-
-            <!-- Tilted Card 3 (Right: +12deg) -->
-            <div class="fan-card fan-card-3 absolute w-52 sm:w-64 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop" 
-                     alt="Sculptural Branding 3" 
-                     class="w-full h-full object-cover mono-filter">
-            </div>
-        </div>
-
-        <!-- Statement Bottom Text -->
-        <div class="max-w-4xl mx-auto mt-16">
-            <h3 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight leading-snug text-mono-black">
-                <span class="text-mono-greyMid font-normal">CREATING VISUAL ENVIRONMENTS THAT FEEL</span> BOTH 
-                POWERFUL AND EFFORTLESS. DESIGNED TO <span class="text-mono-black underline underline-offset-8 decoration-2">ENDURE BEYOND TRENDS.</span>
-            </h3>
-        </div>
-    </section>
-
-    <!-- SECTION 4: OUR SERVICES / OUR PRACTICE -->
-    <section id="services" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
-        
-        <!-- Header Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end border-b border-mono-black/10 pb-8 mb-16">
+        <!-- Bottom Hero Content Grid -->
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-end pb-12 md:pb-8">
             <div class="md:col-span-4">
-                <span class="text-xs font-tech tracking-widest text-mono-greyMid uppercase block mb-1 font-semibold">services</span>
-                <h2 class="display-lowercase text-7xl sm:text-8xl md:text-9xl text-mono-black">
-                    our
-                </h2>
-                <p class="text-xs font-tech text-mono-greyDark max-w-xs mt-3 leading-relaxed">
-                    We offer a comprehensive range of architectural and creative direction services, guiding each project from initial concept to technical execution.
-                </p>
+                <p class="text-xs md:text-sm font-tech tracking-widest uppercase text-mono-black leading-relaxed max-w-xs border-l-2 border-white/30 pl-4">A VISUAL PRACTICE BUILT AROUND IMAGE, FORM, AND IDEAS.</p>
             </div>
-            
-            <div class="md:col-span-8 text-right flex items-end justify-end">
-                <h2 class="display-lowercase text-6xl sm:text-8xl md:text-[130px] text-mono-black tracking-tighter">
-                    services <span class="text-mono-greyMid font-light text-5xl md:text-7xl">///</span>
-                </h2>
-            </div>
-        </div>
-
-        <!-- Main Services Grid: Showcase artwork on left + Service items on right -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <!-- Left Large Hero Artwork Showcase -->
-            <div class="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-xl aspect-[16/10] bg-mono-black group border border-mono-black/10">
-                <img id="serviceDisplayImage" 
-                     src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Architectural Service Render" 
-                     class="w-full h-full object-cover mono-filter transition-transform duration-1000 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-6 right-6 text-white text-xs font-tech tracking-widest uppercase flex justify-between items-center">
-                    <span id="serviceDisplayLabel">ARCHITECTURAL BRANDING & SYSTEM DESIGN</span>
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i>
+            <div class="hidden md:block md:col-span-4"></div>
+            <div class="md:col-span-4 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 justify-end items-end">
+                <div class="glass-mono-dark rounded-2xl p-4 md:p-5 text-center min-w-[140px] w-full sm:w-auto border border-white/20">
+                    <span class="block text-3xl font-display font-bold text-white tracking-tight">26+</span>
+                    <span class="text-[10px] font-tech uppercase tracking-widest text-mono-greyMid">Years of Practice</span>
                 </div>
-            </div>
-
-            <!-- Right Service Stack (Interactive Selector) -->
-            <div class="lg:col-span-5 space-y-4">
-                
-                <!-- Service 1 -->
-                <div onclick="updateServiceDisplay('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop', 'BRAND IDENTITY & SYSTEM DESIGN')" 
-                     class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group">
-                    <div class="flex justify-between items-center mb-1">
-                        <h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">BRAND IDENTITY</h3>
-                        <span class="text-xs font-tech text-mono-greyMid">01</span>
-                    </div>
-                    <p class="text-xs font-tech text-mono-greyDark leading-relaxed">
-                        From concept to completion — seamless, transparent, and structurally complete.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div onclick="updateServiceDisplay('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop', 'ADVERTISING & CAMPAIGN ART DIRECTION')" 
-                     class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group">
-                    <div class="flex justify-between items-center mb-1">
-                        <h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">ADVERTISING + CAMPAIGNS</h3>
-                        <span class="text-xs font-tech text-mono-greyMid">02</span>
-                    </div>
-                    <p class="text-xs font-tech text-mono-greyDark leading-relaxed">
-                        High-impact visual strategy, luxury product campaigns, and fashion direction.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div onclick="updateServiceDisplay('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop', 'EDITORIAL PUBLISHING & TYPOGRAPHY')" 
-                     class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group">
-                    <div class="flex justify-between items-center mb-1">
-                        <h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">EDITORIAL DESIGN</h3>
-                        <span class="text-xs font-tech text-mono-greyMid">03</span>
-                    </div>
-                    <p class="text-xs font-tech text-mono-greyDark leading-relaxed">
-                        Curated spreads that balance aesthetics, typography, comfort and functionality.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div onclick="updateServiceDisplay('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop', 'SPATIAL PLANNING & B2B PRESENTATION DESIGN')" 
-                     class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group">
-                    <div class="flex justify-between items-center mb-1">
-                        <h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">SPATIAL & B2B DESIGN</h3>
-                        <span class="text-xs font-tech text-mono-greyMid">04</span>
-                    </div>
-                    <p class="text-xs font-tech text-mono-greyDark leading-relaxed">
-                        Intelligent layouts designed to enhance flow, precision, and executive presentation.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: PORTFOLIO GRID SHOWCASE -->
-    <section id="portfolio" class="py-20 md:py-32 px-6 max-w-7xl mx-auto border-t border-mono-black/10">
-        
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-            <div>
-                <span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-2 font-semibold">selected works</span>
-                <h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl text-mono-black">
-                    portfolio
-                </h2>
-            </div>
-
-            <!-- Filter Buttons (Monochrome Pills) -->
-            <div id="filterContainer" class="flex flex-wrap gap-2 font-tech text-xs uppercase tracking-wider">
-                <button onclick="filterPortfolio('all')" class="filter-btn bg-mono-black text-white px-5 py-2.5 rounded-full transition-all">ALL</button>
-                <button onclick="filterPortfolio('branding')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">BRANDING</button>
-                <button onclick="filterPortfolio('campaign')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">CAMPAIGNS</button>
-                <button onclick="filterPortfolio('editorial')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">EDITORIAL</button>
-                <button onclick="filterPortfolio('ai')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">AI FILM</button>
-            </div>
-        </div>
-
-        <!-- Grid Container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Item 1: Branding -->
-            <div class="portfolio-item branding group cursor-pointer" onclick="openModal('VELA MONOLITH IDENTITY', 'Brand Identity & Packaging System', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 1" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">VELA MONOLITH IDENTITY</h3>
-                    <span class="text-mono-greyMid">BRANDING / 2026</span>
-                </div>
-            </div>
-
-            <!-- Item 2: Campaign -->
-            <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('AERIA AUTOMOTIVE ART', 'Sculptural Luxury Advertising Campaign', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 2" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">AERIA AUTOMOTIVE</h3>
-                    <span class="text-mono-greyMid">CAMPAIGN / 2026</span>
-                </div>
-            </div>
-
-            <!-- Item 3: Editorial -->
-            <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('STRUCTURAL SILENCE PUBLICATION', 'Editorial Book & Bespoke Layout', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 3" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">STRUCTURAL SILENCE</h3>
-                    <span class="text-mono-greyMid">EDITORIAL / 2025</span>
-                </div>
-            </div>
-
-            <!-- Item 4: AI Film -->
-            <div class="portfolio-item ai group cursor-pointer" onclick="openModal('NEO-SPATIAL CINEMATICS', 'AI Generative Film & Worldbuilding Stills', 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 4" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">NEO-SPATIAL FILM</h3>
-                    <span class="text-mono-greyMid">AI FILM / 2026</span>
-                </div>
-            </div>
-
-            <!-- Item 5: Branding -->
-            <div class="portfolio-item branding group cursor-pointer" onclick="openModal('KRONOS HOROLOGY SYSTEM', 'Minimalist Watchmaking Packaging & Guidelines', 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 5" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">KRONOS HOROLOGY</h3>
-                    <span class="text-mono-greyMid">BRANDING / 2025</span>
-                </div>
-            </div>
-
-            <!-- Item 6: Campaign -->
-            <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('OBSIDIAN FORM COUTURE', 'High-Fashion Outdoor & Digital Strategy', 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop')">
-                <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" 
-                         alt="Work 6" 
-                         class="w-full h-full object-cover mono-filter transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-                <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
-                    <h3 class="font-bold text-sm text-mono-black">OBSIDIAN FORM</h3>
-                    <span class="text-mono-greyMid">CAMPAIGN / 2026</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER & CONTACT SECTION -->
-    <section id="contact" class="pt-12 pb-12 px-3 md:px-6 max-w-[1550px] mx-auto">
-        <div class="rounded-[2rem] md:rounded-[2.5rem] bg-mono-black text-white p-8 md:p-16 relative overflow-hidden shadow-2xl">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 relative z-10">
-                <!-- Left Title -->
-                <div class="lg:col-span-7">
-                    <span class="text-xs font-tech tracking-[0.3em] text-mono-greyMid uppercase block mb-3 font-semibold">start a commission</span>
-                    <h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white">
-                        let's create<br><span class="text-mono-greyMid pl-8 md:pl-16">together</span>
-                    </h2>
-                </div>
-
-                <!-- Monochromatic Contact Form Box -->
-                <div class="lg:col-span-5 glass-mono-dark rounded-3xl p-8 border border-white/20">
-                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4 font-tech text-xs">
-                        <div>
-                            <label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Name / Studio</label>
-                            <input type="text" required placeholder="E.g. Studio Creative" 
-                                   class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Email Address</label>
-                            <input type="email" required placeholder="contact@studio.com" 
-                                   class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Project Scope</label>
-                            <textarea rows="3" required placeholder="Describe project requirements..." 
-                                      class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-white text-mono-black font-bold py-3.5 rounded-xl uppercase tracking-wider hover:bg-mono-greyMid hover:text-white transition-all duration-300 shadow-lg">
-                            Send Inquiry
-                        </button>
-                    </form>
-                    <div id="formSuccess" class="hidden text-center py-8 text-white font-tech tracking-wider">
-                        <i data-lucide="check-circle" class="w-10 h-10 mx-auto mb-3 text-white"></i>
-                        <p class="font-bold uppercase text-sm mb-1">Inquiry Transmitted</p>
-                        <p class="text-xs text-mono-greyMid">We will review your commission request shortly.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bar -->
-            <div class="border-t border-white/15 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-tech text-white/60 tracking-widest uppercase gap-4 relative z-10 font-medium">
-                <div class="flex items-center gap-2">
-                    <span class="font-display font-bold text-white text-sm">VIRTUALAMOEBA</span>
-                    <span>© 2026. ALL RIGHTS RESERVED.</span>
-                </div>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">BEHANCE</a>
-                    <a href="#" class="hover:text-white transition-colors">INSTAGRAM</a>
-                    <a href="#" class="hover:text-white transition-colors">LINKEDIN</a>
-                    <a href="#" class="hover:text-white transition-colors">ARTSTATION</a>
+                <div class="glass-mono-dark rounded-2xl p-4 md:p-5 text-center min-w-[140px] w-full sm:w-auto border border-white/20">
+                    <span class="block text-3xl font-display font-bold text-white tracking-tight">ART|DESIGN</span>
+                    <span class="text-[10px] font-tech uppercase tracking-widest text-mono-greyMid">MULTIDISCIPLINARY</span>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- WORK PREVIEW MODAL -->
-    <div id="workModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="glass-mono-dark rounded-3xl max-w-3xl w-full p-6 md:p-8 relative text-white border border-white/20 shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-white/70 hover:text-white">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-mono-black border border-white/10">
-                <img id="modalImage" src="" alt="Modal View" class="w-full h-full object-cover mono-filter">
-            </div>
-            <h3 id="modalTitle" class="font-display font-bold text-xl md:text-2xl uppercase tracking-wider mb-2"></h3>
-            <p id="modalDesc" class="font-tech text-xs text-mono-greyMid uppercase tracking-widest"></p>
+        <!-- Center Notch Floating CTA Button -->
+        <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+            <a href="#contact" class="group flex items-center gap-3 bg-white text-mono-black px-7 py-3.5 rounded-full font-tech text-xs tracking-wider font-bold shadow-2xl transition-all duration-300 hover:bg-mono-black hover:text-white border border-stone-300">
+                <span>Let's Connect</span>
+                <div class="w-6 h-6 rounded-full bg-mono-black text-white flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:bg-white group-hover:text-mono-black"><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></div>
+            </a>
         </div>
     </div>
+</section>
 
-    <script>
-        // Initialize Lucide Icons
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
+<!-- SECTION 1: ABOUT -->
+<section id="about" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
+    <div class="flex items-start justify-between border-b border-mono-black/10 pb-8 mb-16">
+        <div>
+            <h2 class="display-lowercase text-7xl sm:text-8xl md:text-9xl text-mono-black">the practice</h2>
+            <div class="flex gap-8 text-[11px] font-tech tracking-widest text-mono-greyMid uppercase mt-2 pl-2 font-medium"><span>graphic design</span><span>art direction</span><span>digital art</span></div>
+        </div>
+        <div class="text-mono-black pt-4"><i data-lucide="asterisk" class="w-8 h-8 md:w-12 md:h-12 text-mono-black"></i></div>
+    </div>
+    <div class="max-w-5xl ml-auto mb-16">
+        <h3 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl leading-snug tracking-tight text-mono-black uppercase">
+            <span class="text-mono-greyMid text-xl md:text-2xl font-semibold tracking-wider font-tech block mb-2">I BUILD</span>
+            VISUAL WORLDS FOR BRANDS, CAMPAIGNS AND IDEAS.
+            <img src="I build Top Thumbnails Virtual Amoeba 1.jpg" alt="Commercial brand art direction" class="inline-badge !grayscale-0 !filter-none">
+            GRAPHIC DESIGN, ART DIRECTION, DIGITAL ART AND EMERGING AI TOOLS COME TOGETHER TO CREATE WORK THAT FEELS DISTINCT, INTENTIONAL AND READY FOR THE REAL WORLD.
+            <img src="I build Top Thumbnails Virtual Amoeba 2.jpg" alt="Surreal digital art direction" class="inline-badge !grayscale-0 !filter-none">
+            <span class="text-mono-greyMid font-light pl-2">///</span>
+        </h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+        <div class="md:col-span-6 flex gap-4">
+            <div class="w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-black/10 group bg-mono-greyLight"><img src="I build Top Thumbnails Virtual Amoeba 1.jpg" alt="Contemporary Art Direction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+            <div class="w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-sm border border-black/10 group bg-mono-greyLight"><img src="I build Top Thumbnails Virtual Amoeba 2.jpg" alt="Editorial Graphic Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"></div>
+        </div>
+        <div class="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-tech leading-relaxed text-mono-greyDark">
+            <p class="border-l-2 border-mono-black/20 pl-4">I combine graphic design, art direction, and digital image-making to create visual work with a strong point of view and a refined final eye.</p>
+            <p class="border-l-2 border-mono-black/20 pl-4">My practice moves between commercial design and contemporary visual art, using both traditional design thinking and emerging creative technologies.</p>
+        </div>
+    </div>
+</section>
 
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+<!-- SECTION 2: WHY VIRTUAL AMOEBA -->
+<section id="why" class="py-12 px-3 md:px-6 max-w-[1550px] mx-auto">
+    <div class="relative rounded-[2rem] md:rounded-[2.5rem] bg-mono-greyLight overflow-hidden text-mono-black min-h-[85vh] p-6 md:p-16 flex flex-col justify-between border border-black/10 shadow-sm">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop" alt="Architectural Backdrop" class="w-full h-full object-cover object-center opacity-25 mono-filter">
+            <div class="absolute inset-0 bg-gradient-to-r from-mono-greyLight/95 via-mono-greyLight/60 to-mono-greyLight/95"></div>
+        </div>
+        <div class="relative z-10 max-w-2xl flex justify-between items-start">
+            <div>
+                <span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-2 font-medium">the difference</span>
+                <h2 class="display-lowercase text-6xl sm:text-7xl md:text-9xl text-mono-black">why <span class="text-mono-greyMid block pl-10 md:pl-20">choose</span><span class="block pl-20 md:pl-36">me</span></h2>
+            </div>
+            <div class="text-mono-black font-tech text-base tracking-widest hidden sm:block font-bold">///</div>
+        </div>
+        <div class="relative z-10 my-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div class="glass-mono-light rounded-2xl p-6 border border-white/80 shadow-md transform transition-all duration-300 hover:-translate-y-2"><span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">01 /// RANGE</span><p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed">I work across graphic design, art direction, branding, campaigns, digital art, and visual storytelling, bringing multiple disciplines into one cohesive visual direction.</p></div>
+            <div class="glass-mono-light rounded-2xl p-6 border border-white/80 shadow-md transform transition-all duration-300 hover:-translate-y-2 lg:translate-y-8"><span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">02 /// THE EYE</span><p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed">I have a strong final eye for composition, typography, imagery, hierarchy, and detail, with a focus on making every piece feel intentional rather than simply finished.</p></div>
+            <div class="bg-white rounded-2xl p-6 border border-black/10 shadow-lg text-mono-black transform transition-all duration-300 hover:-translate-y-2"><span class="text-xs font-tech text-mono-black font-bold uppercase tracking-widest block mb-4">03 /// AI + DESIGN</span><p class="text-xs md:text-sm font-tech text-mono-black leading-relaxed font-semibold">I use emerging AI tools as part of a broader design process, combining image generation, creative direction, editing, and traditional design judgment to create original visual work.</p></div>
+            <div class="glass-mono-dark rounded-2xl p-6 border border-white/20 shadow-xl text-white transform transition-all duration-300 hover:-translate-y-2 lg:translate-y-12"><span class="text-xs font-tech text-mono-greyMid uppercase tracking-widest block mb-4 font-semibold">04 /// READY TO USE</span><p class="text-xs md:text-sm font-tech text-white/90 leading-relaxed">Beautiful concepts are only the beginning. I design with the final application in mind, creating polished work that is ready for campaigns, presentations, digital platforms, and real-world use.</p></div>
+        </div>
+        <div class="relative z-10 flex justify-between items-end border-t border-mono-black/10 pt-6 text-[10px] font-tech text-mono-greyDark tracking-widest uppercase font-semibold"><span>DESIGN THAT GIVES BRANDS A CLEARER VOICE, STRONGER PRESENCE, AND A DISTINCT VISUAL POINT OF VIEW.</span><i data-lucide="layers" class="w-4 h-4 text-mono-black"></i></div>
+    </div>
+</section>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
+<!-- SECTION 3: STATEMENT & THREE FAN CARDS -->
+<section id="statement" class="py-24 md:py-36 px-6 max-w-6xl mx-auto text-center relative">
+    <div class="max-w-4xl mx-auto mb-16"><h2 class="font-display font-bold text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight leading-tight text-mono-black">I CREATE VISUAL SYSTEMS <span class="text-mono-greyMid font-normal">THAT BALANCE</span> DISTINCTIVE IMAGERY WITH STRATEGIC <span class="text-mono-black font-extrabold">CLARITY.</span></h2></div>
+    <div class="fan-container relative w-full max-w-2xl mx-auto h-[380px] sm:h-[460px] my-8 flex items-center justify-center">
+        <div class="fan-card fan-card-1 absolute w-52 sm:w-64 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black"><img src="I build visual systems VirtualAmoeba 1.jpg" alt="Brand Identity and Packaging Design" class="w-full h-full object-cover"></div>
+        <div class="fan-card fan-card-2 absolute w-56 sm:w-72 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black"><img src="I build visual systems VirtualAmoeba 2.jpg" alt="Editorial Campaign Art Direction" class="w-full h-full object-cover"></div>
+        <div class="fan-card fan-card-3 absolute w-52 sm:w-64 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white bg-mono-black"><img src="I build visual systems VirtualAmoeba 3.jpg" alt="Digital Campaign Visual Direction" class="w-full h-full object-cover"></div>
+    </div>
+    <div class="max-w-4xl mx-auto mt-16"><h3 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight leading-snug text-mono-black"><span class="text-mono-greyMid font-normal">CREATING VISUAL WORK THAT FEELS</span> DISTINCT, INTENTIONAL, AND <span class="text-mono-black underline underline-offset-8 decoration-2">BUILT TO LAST.</span></h3></div>
+</section>
 
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
+<!-- SECTION 4: MY SERVICES / MY PRACTICE -->
+<section id="services" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end border-b border-mono-black/10 pb-8 mb-16">
+        <div class="md:col-span-4"><span class="text-xs font-tech tracking-widest text-mono-greyMid uppercase block mb-1 font-semibold">my services</span><h2 class="display-lowercase text-7xl sm:text-8xl md:text-9xl text-mono-black">my</h2><p class="text-xs font-tech text-mono-greyDark max-w-xs mt-3 leading-relaxed">Creative design and art direction across brand identity, campaigns, editorial, digital content, and visual storytelling.</p></div>
+        <div class="md:col-span-8 text-right flex items-end justify-end"><h2 class="display-lowercase text-6xl sm:text-8xl md:text-[130px] text-mono-black tracking-tighter">services <span class="text-mono-greyMid font-light text-5xl md:text-7xl">///</span></h2></div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-xl aspect-[16/10] bg-mono-black group border border-mono-black/10"><img id="serviceDisplayImage" src="Virtual Amoeba Services.jpg" alt="VirtualAmoeba Creative Design Services" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div><div class="absolute bottom-6 left-6 right-6 text-white text-xs font-tech tracking-widest uppercase flex justify-between items-center"><span id="serviceDisplayLabel">CREATIVE DESIGN & ART DIRECTION</span><i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i></div></div>
+        <div class="lg:col-span-5 space-y-4">
+            <div onclick="updateServiceDisplay('Virtual Amoeba Services.jpg', 'BRAND IDENTITY & VISUAL SYSTEMS')" class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group"><div class="flex justify-between items-center mb-1"><h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">BRAND IDENTITY</h3><span class="text-xs font-tech text-mono-greyMid">01</span></div><p class="text-xs font-tech text-mono-greyDark leading-relaxed">Distinctive visual identities, brand systems, creative direction, and cohesive design across every touchpoint.</p></div>
+            <div onclick="updateServiceDisplay('Virtual Amoeba Services.jpg', 'GRAPHIC DESIGN & COMMUNICATION')" class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group"><div class="flex justify-between items-center mb-1"><h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">GRAPHIC DESIGN</h3><span class="text-xs font-tech text-mono-greyMid">02</span></div><p class="text-xs font-tech text-mono-greyDark leading-relaxed">Thoughtful visual communication for print, digital, marketing materials, social content, and branded experiences.</p></div>
+            <div onclick="updateServiceDisplay('Virtual Amoeba Services.jpg', 'ADVERTISING & CAMPAIGN ART DIRECTION')" class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group"><div class="flex justify-between items-center mb-1"><h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">ADVERTISING + CAMPAIGNS</h3><span class="text-xs font-tech text-mono-greyMid">03</span></div><p class="text-xs font-tech text-mono-greyDark leading-relaxed">Campaign concepts, visual direction, advertising creative, product storytelling, and launch-ready imagery.</p></div>
+            <div onclick="updateServiceDisplay('Virtual Amoeba Services.jpg', 'EDITORIAL & PRESENTATION DESIGN')" class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group"><div class="flex justify-between items-center mb-1"><h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">EDITORIAL + PRESENTATIONS</h3><span class="text-xs font-tech text-mono-greyMid">04</span></div><p class="text-xs font-tech text-mono-greyDark leading-relaxed">Editorial layouts, lookbooks, pitch decks, B2B presentations, reports, and polished visual storytelling.</p></div>
+            <div onclick="updateServiceDisplay('Virtual Amoeba Services.jpg', 'DIGITAL ART & AI-ENHANCED VISUAL CONTENT')" class="service-card cursor-pointer glass-mono-light rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:translate-x-2 border border-white/90 group"><div class="flex justify-between items-center mb-1"><h3 class="font-display font-bold text-sm tracking-wider uppercase text-mono-black">DIGITAL ART + AI VISUALS</h3><span class="text-xs font-tech text-mono-greyMid">05</span></div><p class="text-xs font-tech text-mono-greyDark leading-relaxed">Art-directed digital imagery and AI-enhanced visual content developed for campaigns, brands, editorial, and creative projects.</p></div>
+        </div>
+    </div>
+</section>
 
-        // Interactive Service Image Display Updater
-        function updateServiceDisplay(imgSrc, label) {
-            const displayImg = document.getElementById('serviceDisplayImage');
-            const displayLabel = document.getElementById('serviceDisplayLabel');
-            
-            displayImg.style.opacity = '0.3';
-            setTimeout(() => {
-                displayImg.src = imgSrc;
-                displayLabel.textContent = label;
-                displayImg.style.opacity = '1';
-            }, 200);
-        }
+<!-- SECTION 5: PORTFOLIO GRID SHOWCASE -->
+<section id="portfolio" class="py-20 md:py-32 px-6 max-w-7xl mx-auto border-t border-mono-black/10">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6"><div><span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-2 font-semibold">selected works</span><h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl text-mono-black">portfolio</h2></div>
+        <div id="filterContainer" class="flex flex-wrap gap-2 font-tech text-xs uppercase tracking-wider"><button onclick="filterPortfolio('all')" class="filter-btn bg-mono-black text-white px-5 py-2.5 rounded-full transition-all">ALL</button><button onclick="filterPortfolio('branding')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">BRANDING</button><button onclick="filterPortfolio('campaign')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">CAMPAIGNS</button><button onclick="filterPortfolio('editorial')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">EDITORIAL</button><button onclick="filterPortfolio('ai')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">AI FILM</button></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('MORA SKIN', 'Beauty Brand Identity & Packaging System', 'MORA SKIN.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="MORA SKIN.jpg" alt="Mora Skin Beauty Brand Identity and Packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">MORA SKIN</h3><span class="text-mono-greyMid">BRANDING / 2026</span></div></div>
+        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('VOLTERRA', 'Automotive Campaign Art Direction', 'VOLTERRA.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="VOLTERRA.jpg" alt="Volterra Automotive Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">VOLTERRA</h3><span class="text-mono-greyMid">CAMPAIGN / 2026</span></div></div>
+        <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('SUNDAY OBJECTS', 'Lifestyle Editorial & Art Direction', 'SUNDAY OBJECTS.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="SUNDAY OBJECTS.jpg" alt="Sunday Objects Lifestyle Editorial Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">SUNDAY OBJECTS</h3><span class="text-mono-greyMid">EDITORIAL / 2026</span></div></div>
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('NOCTURNE', 'Fragrance Campaign Film & Visual Direction', 'NOCTURNE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="NOCTURNE.jpg" alt="Nocturne Fragrance Campaign Film" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">NOCTURNE</h3><span class="text-mono-greyMid">AI FILM / 2026</span></div></div>
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('NORTHLINE', 'Financial Brand Identity & B2B Visual System', 'NORTHLINE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="NORTHLINE.jpg" alt="Northline Financial Brand Identity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">NORTHLINE</h3><span class="text-mono-greyMid">BRANDING / 2026</span></div></div>
+        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('ORBITAL HOUSE', 'Luxury Hospitality Campaign & Visual Experience', 'ORBITAL HOUSE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="ORBITAL HOUSE.jpg" alt="Orbital House Luxury Hospitality Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">ORBITAL HOUSE</h3><span class="text-mono-greyMid">CAMPAIGN / 2026</span></div></div>
+    </div>
+</section>
 
-        // Portfolio Category Filter
-        function filterPortfolio(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            const buttons = document.querySelectorAll('.filter-btn');
+<!-- FOOTER & CONTACT SECTION -->
+<section id="contact" class="pt-12 pb-12 px-3 md:px-6 max-w-[1550px] mx-auto">
+    <div class="rounded-[2rem] md:rounded-[2.5rem] bg-mono-black text-white p-8 md:p-16 relative overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 relative z-10">
+            <div class="lg:col-span-7"><span class="text-xs font-tech tracking-[0.3em] text-mono-greyMid uppercase block mb-3 font-semibold">let's work</span><h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white">let's create<br><span class="text-mono-greyMid pl-8 md:pl-16">together</span></h2></div>
+            <div class="lg:col-span-5 glass-mono-dark rounded-3xl p-8 border border-white/20">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4 font-tech text-xs">
+                    <div><label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Name / Studio</label><input type="text" required placeholder="E.g. Studio Creative" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"></div>
+                    <div><label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Email Address</label><input type="email" required placeholder="virtualamoebastudio@gmail.com" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"></div>
+                    <div><label class="block text-white/70 uppercase tracking-widest mb-2 font-medium">Project Scope</label><textarea rows="3" required placeholder="Describe project requirements..." class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors"></textarea></div>
+                    <button type="submit" class="w-full bg-white text-mono-black font-bold py-3.5 rounded-xl uppercase tracking-wider hover:bg-mono-greyMid hover:text-white transition-all duration-300 shadow-lg">Send Inquiry</button>
+                </form>
+                <div id="formSuccess" class="hidden text-center py-8 text-white font-tech tracking-wider"><i data-lucide="check-circle" class="w-10 h-10 mx-auto mb-3 text-white"></i><p class="font-bold uppercase text-sm mb-1">Inquiry Transmitted</p><p class="text-xs text-mono-greyMid">I will review your commission request shortly.</p></div>
+            </div>
+        </div>
+        <div class="border-t border-white/15 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-tech text-white/60 tracking-widest uppercase gap-4 relative z-10 font-medium">
+            <div class="flex items-center gap-2"><span class="font-display font-bold text-white text-sm">VIRTUALAMOEBA</span><span>© 2026. ALL RIGHTS RESERVED.</span></div>
+            <div class="flex gap-6"><a href="https://sorastats.com/profile/virtualamoeba" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">SORA STATS</a><a href="https://www.saatchiart.com/virtualamoeba" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">SAATCHI ART</a><a href="https://soundcloud.com/virtualamoeba" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">SOUNDCLOUD</a></div>
+        </div>
+    </div>
+</section>
 
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-mono-black', 'text-white');
-                btn.classList.add('bg-mono-greyLight', 'text-mono-black');
-            });
+<!-- WORK PREVIEW MODAL -->
+<div id="workModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-mono-dark rounded-3xl max-w-3xl w-full p-6 md:p-8 relative text-white border border-white/20 shadow-2xl">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white/70 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-mono-black border border-white/10"><img id="modalImage" src="" alt="Modal View" class="w-full h-full object-cover mono-filter"></div>
+        <h3 id="modalTitle" class="font-display font-bold text-xl md:text-2xl uppercase tracking-wider mb-2"></h3><p id="modalDesc" class="font-tech text-xs text-mono-greyMid uppercase tracking-widest"></p>
+    </div>
+</div>
 
-            event.target.classList.remove('bg-mono-greyLight', 'text-mono-black');
-            event.target.classList.add('bg-mono-black', 'text-white');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Modal Functionality
-        function openModal(title, desc, imgSrc) {
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalDesc').textContent = desc;
-            document.getElementById('modalImage').src = imgSrc;
-            document.getElementById('workModal').classList.remove('hidden');
-            document.getElementById('workModal').classList.add('flex');
-        }
-
-        function closeModal() {
-            document.getElementById('workModal').classList.add('hidden');
-            document.getElementById('workModal').classList.remove('flex');
-        }
-
-        // Form Submit Handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            document.getElementById('contactForm').classList.add('hidden');
-            document.getElementById('formSuccess').classList.remove('hidden');
-        }
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); });
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); });
+    });
+    function updateServiceDisplay(imgSrc, label) {
+        const displayImg = document.getElementById('serviceDisplayImage');
+        const displayLabel = document.getElementById('serviceDisplayLabel');
+        displayImg.style.opacity = '0.3';
+        setTimeout(() => { displayImg.src = imgSrc; displayLabel.textContent = label; displayImg.style.opacity = '1'; }, 200);
+    }
+    function filterPortfolio(category) {
+        const items = document.querySelectorAll('.portfolio-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => { btn.classList.remove('bg-mono-black', 'text-white'); btn.classList.add('bg-mono-greyLight', 'text-mono-black'); });
+        event.target.classList.remove('bg-mono-greyLight', 'text-mono-black');
+        event.target.classList.add('bg-mono-black', 'text-white');
+        items.forEach(item => { item.style.display = category === 'all' || item.classList.contains(category) ? 'block' : 'none'; });
+    }
+    function openModal(title, desc, imgSrc) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDesc').textContent = desc;
+        document.getElementById('modalImage').src = imgSrc;
+        document.getElementById('workModal').classList.remove('hidden');
+        document.getElementById('workModal').classList.add('flex');
+    }
+    function closeModal() { document.getElementById('workModal').classList.add('hidden'); document.getElementById('workModal').classList.remove('flex'); }
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        document.getElementById('contactForm').classList.add('hidden');
+        document.getElementById('formSuccess').classList.remove('hidden');
+    }
+</script>
 </body>
 </html>
