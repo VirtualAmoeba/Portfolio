@@ -95,7 +95,7 @@
             font-family: 'Boldonse', sans-serif;
             font-weight: 700;
             letter-spacing: -0.05em;
-            text-transform: lowercase;
+            text-transform: uppercase;
             line-height: 0.82;
         }
 
@@ -200,9 +200,24 @@
         <p class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid mb-3 font-medium">
             digital artist /// creative director
         </p>
-        <h1 class="display-lowercase text-6xl sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[130px] text-white tracking-tighter drop-shadow-lg">
-            virtual<br><span class="pl-8 sm:pl-16 md:pl-24 text-white/90">amoeba</span>
-        </h1>
+        
+.hero-wordmark {
+    opacity: 0;
+    transform: translateY(-70px);
+    clip-path: inset(0 0 100% 0);
+    animation: wordmarkReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes wordmarkReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0);
+    }
+}
+<h1 class="display-lowercase hero-wordmark text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black text-center tracking-tight w-full">
+    VIRTUAL AMOEBA
+</h1>
     </div>
 
     <!-- Top Right Creative Direction Subtext -->
