@@ -253,20 +253,282 @@
     </div>
 </section>
 
+
 <!-- SECTION 5: PORTFOLIO GRID SHOWCASE -->
 <section id="portfolio" class="py-20 md:py-32 px-6 max-w-7xl mx-auto border-t border-mono-black/10">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6"><div><span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-2 font-semibold">selected works</span><h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl text-mono-black">portfolio</h2></div>
-        <div id="filterContainer" class="flex flex-wrap gap-2 font-tech text-xs uppercase tracking-wider"><button onclick="filterPortfolio('all')" class="filter-btn bg-mono-black text-white px-5 py-2.5 rounded-full transition-all">ALL</button><button onclick="filterPortfolio('branding')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">BRANDING</button><button onclick="filterPortfolio('campaign')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">CAMPAIGNS</button><button onclick="filterPortfolio('editorial')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">EDITORIAL</button><button onclick="filterPortfolio('ai')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">AI FILM</button></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+        <div>
+            <span class="text-xs font-tech tracking-[0.3em] uppercase text-mono-greyMid block mb-4 font-semibold">selected works</span>
+            <h2 class="display-lowercase text-6xl sm:text-7xl md:text-8xl text-mono-black">portfolio</h2>
+        </div>
+
+        <div id="filterContainer" class="flex flex-wrap gap-2 font-tech text-xs uppercase tracking-wider">
+            <button onclick="filterPortfolio('all')" class="filter-btn bg-mono-black text-white px-5 py-2.5 rounded-full transition-all">ALL</button>
+            <button onclick="filterPortfolio('branding')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">BRANDING</button>
+            <button onclick="filterPortfolio('campaign')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">CAMPAIGNS</button>
+            <button onclick="filterPortfolio('editorial')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">EDITORIAL</button>
+            <button onclick="filterPortfolio('ai')" class="filter-btn bg-mono-greyLight text-mono-black px-5 py-2.5 rounded-full hover:bg-mono-black hover:text-white transition-all">AI FILM</button>
+        </div>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('MORA SKIN', 'Beauty Brand Identity & Packaging System', 'MORA SKIN.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="MORA SKIN.jpg" alt="Mora Skin Beauty Brand Identity and Packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">MORA SKIN</h3><span class="text-mono-greyMid">BRANDING / 2026</span></div></div>
-        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('VOLTERRA', 'Automotive Campaign Art Direction', 'VOLTERRA.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="VOLTERRA.jpg" alt="Volterra Automotive Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">VOLTERRA</h3><span class="text-mono-greyMid">CAMPAIGN / 2026</span></div></div>
-        <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('SUNDAY OBJECTS', 'Lifestyle Editorial & Art Direction', 'SUNDAY OBJECTS.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="SUNDAY OBJECTS.jpg" alt="Sunday Objects Lifestyle Editorial Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">SUNDAY OBJECTS</h3><span class="text-mono-greyMid">EDITORIAL / 2026</span></div></div>
-        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('NOCTURNE', 'Fragrance Campaign Film & Visual Direction', 'NOCTURNE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="NOCTURNE.jpg" alt="Nocturne Fragrance Campaign Film" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">NOCTURNE</h3><span class="text-mono-greyMid">AI FILM / 2026</span></div></div>
-        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('NORTHLINE', 'Financial Brand Identity & B2B Visual System', 'NORTHLINE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="NORTHLINE.jpg" alt="Northline Financial Brand Identity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">NORTHLINE</h3><span class="text-mono-greyMid">BRANDING / 2026</span></div></div>
-        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('ORBITAL HOUSE', 'Luxury Hospitality Campaign & Visual Experience', 'ORBITAL HOUSE.jpg')"><div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative"><img src="ORBITAL HOUSE.jpg" alt="Orbital House Luxury Hospitality Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"><div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"><span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span></div></div><div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider"><h3 class="font-bold text-sm text-mono-black">ORBITAL HOUSE</h3><span class="text-mono-greyMid">CAMPAIGN / 2026</span></div></div>
+
+        <!-- BRANDING 01: BELLINI PANTRY -->
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('BELLINI PANTRY', 'Specialty Food Brand Identity & Packaging', 'virtualamoeba_portfolio_branding_bellini_1.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_branding_bellini_1.jpg" alt="Bellini Pantry specialty food branding and packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">BELLINI PANTRY</h3>
+                <span class="text-mono-greyMid">BRANDING / 2026</span>
+            </div>
+        </div>
+
+        <!-- BRANDING 02: GOOD FORM -->
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('GOOD FORM', 'Independent Eyewear Brand Identity & Packaging', 'virtualamoeba_portfolio_branding_goodform_2.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_branding_goodform_2.jpg" alt="Good Form eyewear brand identity and packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">GOOD FORM</h3>
+                <span class="text-mono-greyMid">BRANDING / 2026</span>
+            </div>
+        </div>
+
+        <!-- BRANDING 03: AFTER HOURS -->
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('AFTER HOURS', 'Niche Fragrance Brand Identity & Packaging', 'virtualamoeba_portfolio_branding_afterhours_3.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_branding_afterhours_3.jpg" alt="After Hours niche fragrance branding and packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AFTER HOURS</h3>
+                <span class="text-mono-greyMid">BRANDING / 2026</span>
+            </div>
+        </div>
+
+        <!-- BRANDING 04: VERITE -->
+        <div class="portfolio-item branding group cursor-pointer" onclick="openModal('VÉRITÉ', 'Avant-Garde Fine Jewelry Identity & Packaging', 'virtualamoeba_portfolio_branding_verite_4.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_branding_verite_4.jpg" alt="Vérité avant-garde jewelry branding and packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">VÉRITÉ</h3>
+                <span class="text-mono-greyMid">BRANDING / 2026</span>
+            </div>
+        </div>
+
+        <!-- CAMPAIGN 01: SOLARA -->
+        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('SOLARA', 'Sun-Care Campaign & Visual Art Direction', 'virtualamoeba_portfolio_campaigns_solara_1.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_campaigns_solara_1.jpg" alt="Solara sun-care campaign art direction" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">SOLARA</h3>
+                <span class="text-mono-greyMid">CAMPAIGN / 2026</span>
+            </div>
+        </div>
+
+        <!-- CAMPAIGN 02: MOTION DEPT. -->
+        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('MOTION DEPT.', 'Performance Footwear Campaign & Art Direction', 'virtualamoeba_portfolio_campaigns_motiondept_2.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_campaigns_motiondept_2.jpg" alt="Motion Dept performance footwear campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">MOTION DEPT.</h3>
+                <span class="text-mono-greyMid">CAMPAIGN / 2026</span>
+            </div>
+        </div>
+
+        <!-- CAMPAIGN 03: CASA NOMA -->
+        <div class="portfolio-item campaign group cursor-pointer" onclick="openModal('CASA NOMA', 'Contemporary Homewares Campaign & Art Direction', 'virtualamoeba_portfolio_campaigns_casanoma_3.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_campaigns_casanoma_3.jpg" alt="Casa Noma contemporary homewares campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">CASA NOMA</h3>
+                <span class="text-mono-greyMid">CAMPAIGN / 2026</span>
+            </div>
+        </div>
+
+        <!-- EDITORIAL 01: THE LAST GARDEN -->
+        <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('THE LAST GARDEN', 'Fashion Editorial & Visual Storytelling', 'virtualamoeba_portfolio_editorial_the_last_garden_1.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_editorial_the_last_garden_1.jpg" alt="The Last Garden couture fashion editorial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">THE LAST GARDEN</h3>
+                <span class="text-mono-greyMid">EDITORIAL / 2026</span>
+            </div>
+        </div>
+
+        <!-- EDITORIAL 02: PRETTY THINGS DIE -->
+        <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('PRETTY THINGS DIE', 'Fashion Editorial & Cinematic Art Direction', 'virtualamoeba_portfolio_editorial_pretty_things_die_2.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_editorial_pretty_things_die_2.jpg" alt="Pretty Things Die fashion editorial featuring a dark-skinned African woman" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">PRETTY THINGS DIE</h3>
+                <span class="text-mono-greyMid">EDITORIAL / 2026</span>
+            </div>
+        </div>
+
+        <!-- EDITORIAL 03: FACE VALUE -->
+        <div class="portfolio-item editorial group cursor-pointer" onclick="openModal('FACE VALUE', 'Experimental Beauty Editorial & Art Direction', 'virtualamoeba_portfolio_editorial_face_value_3.jpg')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <img src="virtualamoeba_portfolio_editorial_face_value_3.jpg" alt="Face Value experimental beauty editorial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Project</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">FACE VALUE</h3>
+                <span class="text-mono-greyMid">EDITORIAL / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 01 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 01', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_1.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_1.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 01</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 02 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 02', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_2.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_2.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 02</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 03 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 03', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_3.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_3.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 03</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 04 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 04', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_4.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_4.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 04</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 05 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 05', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_5.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_5.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 05</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 06 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 06', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_6.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_6.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 06</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 07 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 07', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_7.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_7.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 07</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
+        <!-- AI FILM 08 -->
+        <div class="portfolio-item ai group cursor-pointer" onclick="openModal('AI FILM 08', 'AI-Generated Film & Visual Direction', 'virtualamoeba_portfolio_aifilm_8.mp4')">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-mono-black mb-4 border border-mono-black/10 relative">
+                <video src="virtualamoeba_portfolio_aifilm_8.mp4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline></video>
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="bg-white text-mono-black px-4 py-2 rounded-full font-tech text-xs tracking-widest font-bold uppercase">View Film</span>
+                </div>
+            </div>
+            <div class="flex justify-between items-baseline font-tech text-xs uppercase tracking-wider">
+                <h3 class="font-bold text-sm text-mono-black">AI FILM 08</h3>
+                <span class="text-mono-greyMid">AI FILM / 2026</span>
+            </div>
+        </div>
+
     </div>
 </section>
+
 
 <!-- FOOTER & CONTACT SECTION -->
 <section id="contact" class="pt-12 pb-12 px-3 md:px-6 max-w-[1550px] mx-auto">
